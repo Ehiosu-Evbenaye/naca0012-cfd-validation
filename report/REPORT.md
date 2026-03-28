@@ -25,36 +25,13 @@ The compressible RANS equations are solved with the SST k-ω two-equation model 
 
 **y⁺ requirement:** y⁺ < 1 on the entire airfoil surface (low-Re formulation, no wall functions).
 
-## 4. Numerical Setup (STAR-CCM+)
-- Solver: segregated, implicit, steady-state
-- Spatial discretization: 2nd-order upwind
-- Boundary conditions: Velocity inlet / Pressure outlet / Symmetry (2D)
-- Farfield distance: ~500 chord lengths
-- Mesh type: structured C-grid with 40 prism layers in boundary layer
-
-**Mesh Independence Study (completed):**  
-Three successively refined grids were used. Grid Convergence Index (GCI) < 0.5% for C_L and C_D at α = 10°.
-
-(Insert mesh statistics table and GCI results here – already prepared in project folder)
-
-## 5. Experimental Validation Data
+## 4. Experimental Validation Data
 Data downloaded from NASA TMR:
 - `CLCD_Ladson_expdata.dat` (force coefficients)
 - `CP_Ladson.dat` (pressure distributions)
 
-## 6. Results & Discussion
-**Placeholder sections** – will be filled with STAR-CCM+ plots:
-- C_L vs α
-- C_D vs C_L (drag polar)
-- C_p distributions at α = 0°, 10°, 15°
-- C_f distributions
-- Velocity/pressure contours, streamlines (STAR-CCM+)
-
-**Python-generated experimental target curves** are already available in `/figures/`.
-
-## 7. Conclusions & Future Work
+## 6. Conclusions & Future Work
 - Excellent agreement expected once final STAR-CCM+ run is completed.
-- Future work: OpenFOAM replication, unsteady DES, compressibility effects.
 
 ## References
 1. Ladson, C. L. (1988). NASA TM-4074.
