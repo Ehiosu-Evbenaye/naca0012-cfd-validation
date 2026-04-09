@@ -7,12 +7,9 @@ The NACA 0012 airfoil is a classical benchmark case used worldwide for CFD code 
 ## 1. Geometry & Flow Conditions
 
 ### 1.1 Airfoil Geometry
-The NACA 0012 is a 12% thick symmetrical airfoil defined by the **standard NACA 4-digit series thickness distribution**. With chord length *c* = 1 m, the upper and lower surface coordinates are given by:
+The NACA 0012 is a 12% thick symmetrical airfoil defined by the **standard NACA 4-digit series thickness distribution**. With chord length *c* = 1 m, the upper and lower surface coordinates are given by: <br>
 
-$$
-y_t = \pm 5t \cdot c \left( 0.2969 \sqrt{\frac{x}{c}} - 0.1260 \frac{x}{c} - 0.3516 \left( \frac{x}{c} \right)^2 + 0.2843 \left( \frac{x}{c} \right)^3 - 0.1015 \left( \frac{x}{c} \right)^4 \right)
-$$
-
+$y_t = \pm 5t \cdot c \left( 0.2969 \sqrt{\frac{x}{c}} - 0.1260 \frac{x}{c} - 0.3516 \left( \frac{x}{c} \right)^2 + 0.2843 \left( \frac{x}{c} \right)^3 - 0.1015 \left( \frac{x}{c} \right)^4 \right)$ <br>
 where \( t = 0.12 \) (thickness ratio) and *x* ranges from 0 to *c*.  
 
 Coordinates were generated analytically using the exact formula above. No external CAD software was required. The leading-edge radius is approximately 0.0158*c* and the trailing edge is sharp (as per NACA definition).
