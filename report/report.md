@@ -78,21 +78,8 @@ $\Delta y_1 = \frac{y^+ \cdot \mu}{\rho u_\tau} \approx 1.2 \times 10^{-5}\ \tex
 
 This value will be used directly in STAR-CCM+ prism-layer meshing.
 
-## 3. Experimental Validation Data
 
-Data files were downloaded directly from the NASA Turbulence Modeling Resource (TMR) website and are stored in the repository:
-- `CLCD_Ladson_expdata.dat` → Lift and drag coefficients vs. α
-- `CP_Ladson.dat` → Surface pressure distributions at selected α
-
-**Key experimental observations (from data analysis in Excel/MATLAB):**
-- Lift curve is linear up to α ≈ 10°–12° with slope close to 2π (thin-airfoil theory).
-- Maximum lift coefficient CL,max ≈ 1.5–1.6 near α = 16° followed by stall.
-- Drag coefficient shows a clear minimum near α = 0° and increases with α due to pressure drag.
-- Pressure distributions show progressive suction peak movement and eventual separation on the upper surface at high α.
-
-Plots of CL vs. α, CD vs. α, and Cp distributions have been generated from the raw .dat files and are ready for direct comparison with simulation results (files: `plots/experimental/`).
-
-## 4. Theoretical Benchmark – Thin Airfoil Theory
+## 3. Theoretical Benchmark – Thin Airfoil Theory
 
 For validation of the linear regime, inviscid thin-airfoil theory provides an analytical benchmark (valid for small α, symmetric airfoil):
 
@@ -112,7 +99,7 @@ $C_{m,c/4} = 0$
 
 Deviations at higher α are expected due to viscous effects and boundary-layer separation. This theoretical line will be plotted alongside experimental and CFD data.
 
-## 5. Mesh Strategy & Quality (Theoretical)
+## 4. Mesh Strategy & Quality (Theoretical)
 
 Although the actual mesh will be generated in STAR-CCM+, the strategy is fully defined:
 - Structured C-grid or unstructured hybrid with prism layers.
@@ -123,14 +110,14 @@ Although the actual mesh will be generated in STAR-CCM+, the strategy is fully d
 
 Mesh independence will be assessed using Grid Convergence Index (GCI) per ASME V&V 20 standard once multiple grids are run.
 
-## 6. Simulation Setup (To be completed in STAR-CCM+)
+## 5. Simulation Setup (To be completed in STAR-CCM+)
 
 - Steady RANS, incompressible (M = 0.15 allows this approximation).
 - Coupled flow solver, 2nd-order discretization.
 - Boundary conditions: velocity inlet, pressure outlet, symmetry top/bottom, no-slip on airfoil.
 - Fixed transition at x/c = 0.05.
 
-## 7. Results & Discussion (To be completed)
+## 6. Results & Discussion (To be completed)
 
 - Force coefficients (CL, CD) vs. α
 - Surface pressure distributions (Cp)
@@ -138,7 +125,7 @@ Mesh independence will be assessed using Grid Convergence Index (GCI) per ASME V
 - Mesh independence study
 - Quantitative error metrics (experimental vs. CFD)
 
-## 8. Conclusions & Future Work
+## 7. Conclusions
 
 **Completed without software:**
 - Full geometry generation and analytical coordinates
