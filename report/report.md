@@ -37,9 +37,7 @@ Full coordinate table is available in the repository (`geometry/naca0012_coordin
 
 **Calculated freestream quantities (theoretical, using standard air properties adjusted for tunnel conditions):**
 The LTPT tunnel adjusts density to achieve the target Re at the given Mach number. Freestream velocity *V∞* is obtained from:
-$$
-V_\infty = M \cdot a \approx 51.0\ \text{m/s}
-$$
+$V_\infty = M \cdot a \approx 51.0\ \text{m/s}$
 (where *a* ≈ 340 m/s at typical tunnel temperature). Dynamic pressure *q∞* = ½ ρ V∞² is set to match experimental conditions. All values are directly consistent with the NASA TMR dataset.
 
 ## 2. Governing Equations & Turbulence Model
@@ -61,32 +59,22 @@ $$
 Turbulence closure is provided by Menter’s Shear Stress Transport (SST) k-ω model (Menter, 1994), chosen for its superior performance in flows with adverse pressure gradients, separation, and airfoil stall prediction compared to k-ε models.
 
 **SST k-ω model equations (blended):**
-$$
-\frac{\partial (\rho k)}{\partial t} + \frac{\partial (\rho u_j k)}{\partial x_j} = P_k - \beta^* \rho \omega k + \frac{\partial}{\partial x_j} \left[ (\mu + \sigma_k \mu_t) \frac{\partial k}{\partial x_j} \right]
-$$
+$\frac{\partial (\rho k)}{\partial t} + \frac{\partial (\rho u_j k)}{\partial x_j} = P_k - \beta^* \rho \omega k + \frac{\partial}{\partial x_j} \left[ (\mu + \sigma_k \mu_t) \frac{\partial k}{\partial x_j} \right]$
 
-$$
-\frac{\partial (\rho \omega)}{\partial t} + \frac{\partial (\rho u_j \omega)}{\partial x_j} = \alpha \frac{P_k}{\nu_t} - \beta \rho \omega^2 + \frac{\partial}{\partial x_j} \left[ (\mu + \sigma_\omega \mu_t) \frac{\partial \omega}{\partial x_j} \right] + 2(1-F_1)\frac{\rho \sigma_{\omega2}}{\omega} \frac{\partial k}{\partial x_j} \frac{\partial \omega}{\partial x_j}
-$$
+$\frac{\partial (\rho \omega)}{\partial t} + \frac{\partial (\rho u_j \omega)}{\partial x_j} = \alpha \frac{P_k}{\nu_t} - \beta \rho \omega^2 + \frac{\partial}{\partial x_j} \left[ (\mu + \sigma_\omega \mu_t) \frac{\partial \omega}{\partial x_j} \right] + 2(1-F_1)\frac{\rho \sigma_{\omega2}}{\omega} \frac{\partial k}{\partial x_j} \frac{\partial \omega}{\partial x_j}$
 
 (with standard constants and blending function *F₁*).
 
 **y⁺ requirement:** Low-Re formulation with y⁺ < 1 on the entire airfoil surface (no wall functions). First-cell height was estimated analytically using flat-plate boundary-layer theory:
 
 Approximate skin-friction coefficient (Schlichting):
-$$
-C_f \approx \frac{0.455}{(\log_{10} Re_x)^{2.58}}
-$$
+$C_f \approx \frac{0.455}{(\log_{10} Re_x)^{2.58}}$
 
 Friction velocity:
-$$
-u_\tau = V_\infty \sqrt{\frac{C_f}{2}}
-$$
+$u_\tau = V_\infty \sqrt{\frac{C_f}{2}}$
 
 First-cell height for y⁺ = 1:
-$$
-\Delta y_1 = \frac{y^+ \cdot \mu}{\rho u_\tau} \approx 1.2 \times 10^{-5}\ \text{m (at Re = 6×10⁶)}
-$$
+$\Delta y_1 = \frac{y^+ \cdot \mu}{\rho u_\tau} \approx 1.2 \times 10^{-5}\ \text{m (at Re = 6×10⁶)}$
 
 This value will be used directly in STAR-CCM+ prism-layer meshing.
 
@@ -108,13 +96,9 @@ Plots of CL vs. α, CD vs. α, and Cp distributions have been generated from the
 
 For validation of the linear regime, inviscid thin-airfoil theory provides an analytical benchmark (valid for small α, symmetric airfoil):
 
-$$
-C_L = 2\pi \alpha \quad (\alpha\ \text{in radians})
-$$
+$C_L = 2\pi \alpha \quad (\alpha\ \text{in radians})$
 
-$$
-C_{m,c/4} = 0
-$$
+$C_{m,c/4} = 0$
 
 **Comparison table (selected angles):**
 
