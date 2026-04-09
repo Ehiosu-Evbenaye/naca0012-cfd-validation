@@ -10,7 +10,7 @@ Validated lift and drag coefficients (0°–12° AoA) against NASA Langley exper
 - Includes full mesh independence study and uncertainty quantification (UQ).
 
 ## Key Simulation Parameters
-- Reynolds number: 3 × 10⁶ (chord = 1)
+- Reynolds number: 6 × 10⁶ (chord = 1)
 - Mach number: 0.15 (low-speed, essentially incompressible)
 - Turbulence model: SST k-ω (low-Re formulation, y⁺ < 1)
 - Wall treatment: Structured boundary-layer mesh with y⁺ < 1 on entire airfoil
